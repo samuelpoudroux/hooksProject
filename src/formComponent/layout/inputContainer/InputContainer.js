@@ -14,7 +14,7 @@ const StyledInputContainer = styled.div`
     border-radius: ${props => props.border[1]|| null}px;
     border-style: ${props => props.border[2] || null};
     background:${props => props.background || null};
-
+   
 `;
 
 const InputContainer = ({ children, ...props }) => {
@@ -35,7 +35,7 @@ export default InputContainer;
     flexDirection={}
     justifyContent={}
     alignContent={}
-     border={[border-width, border-radius, border-style]}
-
+     border={[border-width, border-radius, border-style]
+    
 >
 </InputContainer> */}

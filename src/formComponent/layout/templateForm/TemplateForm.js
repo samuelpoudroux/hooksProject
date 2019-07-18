@@ -9,12 +9,13 @@ justify-content: ${props => props.justifyContent};
 align-items: ${props => props.alignItems};
 height:  ${props => props.height}%;
 width:  ${props => props.width}%;
-border-width: ${props => props.border[0] || 0}px;
+border-bottom-width: ${props => props.border[0] || 0}px;
+border-top-width:${props => props.border[1] || 0}px;
+border-left-width:${props => props.border[2] || 0}px;
+border-right-width:${props => props.border[3] || 0}px;
 border-color:${props => props.borderColor || '#777'};
-border-radius: ${props => props.border[1]|| null}px;
+border-radius: ${props => props.border[1] || null}px;
 border-style: ${props => props.border[2] || null};
-
-
 `;
 
 const templateForm = ({ children, ...props }) => {
