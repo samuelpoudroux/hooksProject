@@ -5,7 +5,7 @@ import error from '../../asset/icon/baseline-error-24px.svg'
 
 const StyledInput = styled.input`
     padding: ${props => props.padding[0] / 2 || 5}px ${props => props.padding[1] / 2 || 10}px;
-    background: url(${props => (props.background)? check : ("")}) no-repeat scroll 100%;
+    background: url(${props => (props.background === "valid" && props.required)? check : null || (props.background === "invalid" && props.required)? error:null}) no-repeat scroll 100%;
     background-size: 15px;
     border-bottom-width: ${props => props.border[0] || 0}px;
     border-top-width:${props => props.border[1] || 0}px;

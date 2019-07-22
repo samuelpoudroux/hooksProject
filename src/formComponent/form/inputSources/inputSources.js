@@ -5,6 +5,4 @@ const InputJson = [
     {"name":"source", "required": false, "type":"text", "placeholder":"Prénom"},
 ] 
 
-
-
 export default  InputJson

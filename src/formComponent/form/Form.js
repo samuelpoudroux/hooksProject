@@ -10,7 +10,6 @@ const Form = () => {
     const [statesManager, setStatesManager] = useState({});
     const [borderStatesManager, setBorder] = useState("");
     const [validUrlStatesManager, setValidUrl] = useState({});
-    const [errorUrlStatesManager, setErrorUrl] = useState({});
 
     async function onChangeUseState(e) {
         const { name, value } = e.target;
@@ -22,25 +21,22 @@ const Form = () => {
         if (statesManager[name] !== undefined) {
             if (required && statesManager[name].length <= 2) {
                 setBorder(prevState => ({ ...prevState, [name]: 'red' }))
-                setValidUrl(prevState => ({ ...prevState, [name]: null }))
+                setValidUrl(prevState => ({ ...prevState, [name]: "invalid" }))
             }
             else if (required && statesManager[name].length > 2) {
                 await setBorder(prevState => ({ ...prevState, [name]: 'green' }))
-                await setValidUrl(prevState => ({ ...prevState, [name]: true }))
-                console.log(validUrlStatesManager)
-
+                await setValidUrl(prevState => ({ ...prevState, [name]: "valid" }))
             }
             else {
                 setBorder(prevState => ({ ...prevState, [name]: 'white' }))
                 setValidUrl(prevState => ({ ...prevState, [name]: null }))
-
             }
         }
     }
 
-
     function inputGenerator(i) {
         if (i < inputSources.length) {
+            console.log(inputSources[i].name.length)
             return (
                 <Input
                     type={inputSources[i].type}
@@ -50,7 +46,7 @@ const Form = () => {
                     padding={Css.input.padding}
                     background={validUrlStatesManager[inputSources[i].name] || null}
                     border={Css.input.border}
-                    borderColor={borderStatesManager[inputSources[i].name] || null}
+                    borderColor={borderStatesManager[inputSources[i].name] || Css.input.borderColor}
                     width={Css.input.width}
                     height={Css.input.height}
                     name={inputSources[i].name}
@@ -100,10 +96,10 @@ const Form = () => {
             alignItems={Css.templateForm.alignItems}
             border={Css.templateForm.border}
             borderColor={Css.templateForm.borderColor}
-            background={Css.templateForm.backgrounds}
+            background={Css.templateForm.background}
+            padding={Css.templateForm.padding}
+            boxShadow={Css.templateForm.boxShadow}
         >
-
-
             {rowGenerator()}
         </TemplateForm >
     )

@@ -5,9 +5,11 @@ const CssGlobal = {
         "width": 60,
         "justifyContent": 'center',
         "alignItems": 'center',
-        "border": [1, 0,0,0, "solid"],
-        "borderColor": "green",
-        "background": null
+        "border": [1, 1,1,1, 1],
+        "borderColor": "",
+        "background": null,
+        "padding":[15,15],
+        "boxShadow": [0, 2, 5, 0]
     },
 
     "inputContainer": {
@@ -26,8 +28,8 @@ const CssGlobal = {
         "margin": [10],
         "padding": [20],
         "background": "white",
-        "borderColor": '',
-        "border": [1, 0,0,0, "solid"],
+        "borderColor": "#456883",
+        "border": [2, 0,0,0, "solid"],
         "width": 30,
         "height": null,
         "placeholderFontweight": "lighted",
